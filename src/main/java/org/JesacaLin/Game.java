@@ -10,6 +10,7 @@ public class Game {
     }
 
     public void playRound() {
+        System.out.println();
         player1.makeChoice();
         player2.makeChoice();
         String winner = detemineWinner();
@@ -19,15 +20,18 @@ public class Game {
     public String detemineWinner() {
         String playerChoice1 = player1.getChoice();
         String playerChoice2 = player2.getChoice();
-//        if (playerChoice1.equals(playerChoice2)) {
-//            return "tied";
-//        }
+        System.out.println("Player 1 Choice: "+ playerChoice1);
+        System.out.println("Player 2 Choice: "+ playerChoice2);
+
+        if (playerChoice1.equals(playerChoice2)) {
+            return "tied";
+        }
         if ((playerChoice1.equals("rock") && playerChoice2.equals("scissor")) ||
         (playerChoice1.equals("scissor") && playerChoice2.equals("paper")) ||
                 (playerChoice1.equals("paper") && playerChoice2.equals("rock")))
         {
-            return "Player 1";
+            return playerChoice1;
         }
-        return "Player 2";
+        return playerChoice2;
     }
 }

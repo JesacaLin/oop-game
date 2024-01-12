@@ -1,5 +1,5 @@
 package org.JesacaLin;
-
+import java.util.Scanner;
 import java.util.Random;
 
 public class Player {
@@ -11,11 +11,7 @@ public class Player {
     public Player (String name) {
         this.name = name;
     }
-    public Player (String name, String choice, boolean isComputer) {
-        this.name = name;
-        this.choice = choice;
-        this.isComputer = isComputer;
-    }
+
     public Player (String name, boolean isComputer) {
         this.name = name;
         this.isComputer = isComputer;
@@ -32,11 +28,14 @@ public class Player {
     }
 
     public void makeChoice() {
+        Scanner scanner = new Scanner(System.in);
         if (isComputer) {
             Random random = new Random();
             this.choice = CHOICES[random.nextInt(CHOICES.length)];
         } else {
-            this.choice = choice;
+            System.out.println("Enter your choice (rock, paper, or scissors): ");
+            this.choice = scanner.nextLine();
+
         }
 
     }
