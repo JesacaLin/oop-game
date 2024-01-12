@@ -19,7 +19,7 @@ public class Player {
     public String getChoice() {
         return this.choice;
     }
-    public void makeChoice() {
+    public void makeChoice(String choice) {
         if (isComputer) {
             Random random = new Random();
             this.choice = CHOICES[random.nextInt(CHOICES.length)];
